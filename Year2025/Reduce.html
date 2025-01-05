@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //sum of numbers 
+        const numbers = [1, 2, 3, 4];
+        const sum = numbers.reduce((acc, num) => {
+            return acc + num
+        }, 0)
+        console.log(sum)
+
+        //Summing property values:
+        const items = [
+            { name: 'Book', price: 10 },
+            { name: 'Pen', price: 5 },
+            { name: 'Notebook', price: 15 }
+        ];
+        const totalPrice = items.reduce((acc, eachObject) => {
+            return acc + eachObject.price
+        }, 0)
+        console.log(totalPrice)
+
+        //Counting occurrences:
+        const fruits = ['apple', 'banana', 'apple', 'orange', 'banana', 'apple'];
+        const count = fruits.reduce((acc, fruit) => {
+            acc[fruit] = (acc[fruit] || 0) + 1
+            return acc;
+        }, {})
+        console.log(count)
+
+        //Find Maximum or Minimum in an Array
+        const digits = [10, 5, 20, 8];
+        const max = digits.reduce((acc, digit) => {
+            return digit > acc ? digit : acc
+        }, -Infinity)
+        console.log(max)
+
+        //Find Minimum in an Array
+        const values = [10, 5, 20, 8];
+        const min = digits.reduce((acc, digit) => {
+            return digit < acc ? digit : acc
+        }, Infinity)
+        console.log(min)
+
+        //Group Items by a Property
+        const peoples = [
+    { name: 'Alice', age: 25 },
+    { name: 'Bob', age: 25 },
+    { name: 'Charlie', age: 30 }
+];
+
+        const grouped = peoples.reduce((acc, people) => {
+            const key = people.age;  
+            if (!acc[key]) {
+                acc[key] = [];
+            } 
+            acc[key].push(people); 
+            return acc;
+        }, {});
+
+        console.log(grouped);
+
+    </script>
+</body>
+
+</html>
