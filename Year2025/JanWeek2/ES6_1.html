@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        //. Write a function that takes a user's age and determines if they are old enough to vote (age 18 or older)
+        function isEligibleToVote(age) {
+            if (typeof age !== 'number' || age < 0) {
+                return "Invalid Age"
+            }
+            return age >= 18 ? 'Eligible to Vote' : 'Not eligible to Vote'
+        }
+        console.log(isEligibleToVote(20));
+        console.log(isEligibleToVote(18));
+        console.log(isEligibleToVote(17));
+
+        // Write a function that takes two numbers as input and determines which one is greater.
+        function isGreater(a, b) {
+            if (a - b < 0) {
+                return `${b} is greater than ${a}`
+            } else if (a - b > 0) {
+                return `${a} is greater than ${b}`
+            } else {
+                return `${a} and ${b} are equal`
+            }
+        }
+
+        console.log(isGreater(2, 5)) // 5 is greater than 2
+        console.log(isGreater(10, 5)) // 10 is greater than 5
+        console.log(isGreater(5, 5)) // 5 and 5 are equal
+
+        //Write a function that takes a number as input and determines if it is positive or negative.
+        function checkNum(num) {
+            return num > 0 ? 'Positive Number' : num < 0 ? 'Negative Number' : 'Zero'
+        }
+
+        console.log(checkNum(9)) // Positive Number
+        console.log(checkNum(-8)) // Negative Number
+        console.log(checkNum(22)) // Positive Number
+        console.log(checkNum(0)) // Zero
+
+        //Write a function that takes a number as input and determines if it is even or odd.
+        function isEvenOdd(num) {
+            return num % 2 === 0 ? "Even Number" : "Odd Number"
+        }
+        console.log(isEvenOdd(5)) // Odd Number
+        console.log(isEvenOdd(8)) // Even Number
+        console.log(isEvenOdd(10)) // Even Number
+
+        //Write a function that takes a string as input and determines if it contains the letter 'a' or ‘A’.
+        function checkForAlphabetA(str) {
+            for (let i = 0; i < str.length; i++) {
+                if (str[i].toLowerCase() === 'a') {
+                    return 'Includes a'
+                }
+            }
+            return 'Does not include a'
+        }
+        console.log(checkForAlphabetA('Tanay')) // Includes a
+        console.log(checkForAlphabetA('Jeep')) // Does not include a
+        console.log(checkForAlphabetA('Jane')) // Includes a
+
+        //Write a function that takes a string as input and determines if it is longer than 5 characters.
+        function checkLength(str) {
+            return str.length === 0 ? 'Blank String' : str.length > 5 ? 'More than 5 characters' : 'Less than 5 characters'
+        }
+        console.log(checkLength('Programming')) // more than 5 characters
+        console.log(checkLength('Jeep')) // less than 5 characters
+        console.log(checkLength(''));
+
+
+        //Write a function that takes a number as input and determines if it is between 1 and 10.
+        function isBetweenOneAndTen(num) {
+            return num >= 1 && num <= 10 ? true : false
+        }
+        console.log(isBetweenOneAndTen(5)) // true
+        console.log(isBetweenOneAndTen(11)) // false
+
+        //Write a function that takes a string as input and determines if it contains the word "hello".
+        function isHelloPresent(str) {
+            const arr = str.toLowerCase().split(" ");
+            return arr.includes('hello') ? true : false
+        }
+        console.log(isHelloPresent('Hello World')) // true
+        console.log(isHelloPresent('World')) // false
+
+        // Write a function that takes a number as input and determines if it is a multiple of 3
+        function isMultipleOfThree(num) {
+            if (num % 3 === 0) {
+                return true
+            } else {
+                return false
+            }
+        }
+        console.log(isMultipleOfThree(5)) // false
+        console.log(isMultipleOfThree(9)) // true
+
+        //Write a function which takes in a number as input and returns it after multiplying by 10.
+        const multiplyByTen = (num) => num * 10;
+        console.log(multiplyByTen(20)) // 200
+        console.log(multiplyByTen(40)) // 400
+
+        //Console individual values of the product object using object destructuring.
+        const product = {
+            title: 'iPhone',
+            price: 5999,
+            description: 'The iPhone is a smartphone developed by Apple',
+        }
+        const { title, price, description } = product;
+        console.log(title) // iPhone
+        console.log(price) // 5999
+        console.log(description) // The iPhone is a smartphone developed by Apple
+
+        //. Create an object book with properties title, author, and pages. Create a function getBookDetails
+        // that takes a book object as a parameter and returns if the book has more than 100 pages.
+        const book = {
+            title: 'Book Title',
+            author: "Rakesh",
+            pages: 115
+        }
+        const getBookDetails = (book) => {
+            return book.pages > 100 ? true : false;
+        };
+        console.log(getBookDetails(book)) // logs 'true' if the pages are above 100
+
+        //. Create a function changeOccupation that takes an object person and a string newOccupation as
+        // parameters, and changes the occupation property of the person object to the newOccupation.
+        // Log the person object to the console before and after calling the function.
+        const person = {
+            name: 'Amit',
+            age: 25,
+            occupation: 'Software Engineer'
+        }
+        console.log(person);
+        const changeOccupation = (obj, newOccupation) => {
+            obj.occupation = newOccupation
+        }
+        changeOccupation(person, 'Product Manager')
+        console.log(person);
+
+        //. Given an array numbers containing the numbers 1, 2, and 3. Use array destructuring to log each number to the console.
+        const numbers = [1, 2, 3];
+        const [a, b, c] = numbers;
+        console.log(a);
+        console.log(b);
+        console.log(c);
+
+        // Convert the given function into ES6 with least amount of characters
+        const defaultParamsFunc = (a, b, c=4) => a*b*c 
+            // return c === undefined ? c=4 : a*b*c
+            // if (c === undefined) {
+            //     c = 4
+            // }
+            // return a * b * c
+        
+        console.log(defaultParamsFunc(3, 1)) // 12
+        console.log(defaultParamsFunc(3, 10)) // 120
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Write a function that takes an array of numbers and returns a new array with the square of each number.
+        function squareNumber(arr){
+            return arr.map((num)=> num*num)
+        }
+        console.log(squareNumber([2,3,4,5]));
+
+        //Write a function that filters out only the even numbers from an array.
+        function evenNumber(arr){
+            return arr.filter((num) => num%2 === 0)
+        }
+        console.log(evenNumber([1,2,3,4,5,6,7,8,9]));
+
+        //Write a function to calculate the sum of all numbers in an array.
+        function sumNumber(arr){
+           return arr.reduce((acc, curr) => {
+                acc= acc+curr
+                return acc
+            }, 0)
+        }
+        console.log(sumNumber([1,2,3,4,5,6,7,8,9]));
+
+        //Write a function that finds the first negative number in an array.
+        function findFirstNegative(arr){
+            return arr.find(num => num < 0)
+        }
+        console.log(findFirstNegative([1,2,-1,3,-2,4]));
+
+        //Write a function to check if all numbers in an array are positive.
+        function checkPositive(arr){
+            return arr.every(num => num > 0)
+        }
+        console.log(checkPositive([1,2,-1,3,-2,4]));
+        console.log(checkPositive([1,2,1,3,2,4]));
+
+        //Write a function to sort an array of numbers in descending order.
+        function sortNumber(arr){
+            return arr.sort((a,b) => a-b)
+        }
+        console.log(sortNumber([1,2,8,3,9,4]));
+
+        //Write a function to return an array of duplicate elements in an array.
+        function duplicateNumber(arr){
+            const temp = [];
+            const unique = [];
+            const duplicates = arr.filter((num) =>{
+                if(temp.includes(num)){
+                    return true;
+                    
+                }else{
+                    temp.push(num);
+                    unique.push(num)
+                    return false
+                }
+            })
+            console.log("Unique values", unique);
+            console.log("Duplicate values", duplicates);
+            return duplicates
+            
+           
+        }
+        console.log(duplicateNumber([1,2,3,1,2,4,5]));
+
+        //Write a function to count how many times each element appears in an array.
+        function countElements(arr){
+            return arr.reduce((acc, curr) =>{
+                if(acc[curr]){
+                    console.log(acc[curr]);
+                    acc[curr] = acc[curr] + 1
+                }else{
+                    acc[curr] = 1
+                }
+                return acc
+            }, {})
+        }
+        console.log(countElements([1,2,3,1,2]));
+
+        //Write a function that removes all falsy values (false, 0, "", null, undefined, and NaN) from an array.
+        function removeFalsyValues(arr){
+            return arr.filter((value) =>{
+                // return value !== false && value !== 0 && value !== "" && value !== null && value !== undefined && !Number.isNaN(value);
+                return value
+            })
+        }
+        console.log(removeFalsyValues([1,2,false, 3, 0, "", null, undefined, NaN]));
+
+        //Write a function that flattens a nested array into a single-level array.
+        function singleLevelArray(arr){
+            return arr.reduce((acc, curr) =>{
+                if(Array.isArray(curr)){
+                    return acc.concat(curr)
+                }else{
+                    acc.push(curr);
+                    return acc
+                }
+            }, [])
+        }
+        console.log(singleLevelArray([[1, 2], [3, 4], 5]));
+
+        //Write a function to group objects in an array by a specific key.
+        const data = [{id: 1, name: 'Alice'}, {id: 2, name: 'Bob'}, {id: 1, name: 'Alice'}];
+        function groupBy(){
+            return data.reduce((acc,curr) => {
+                const key = curr.id;
+                if(!acc[key]){
+                    acc[key] = []
+                }
+                acc[key].push(curr);
+                return acc;
+            }, {})
+        }
+        console.log(groupBy());
+
+        //Write a function to find the longest word in an array of strings.
+        function longestWord(arr){
+            return arr.reduce((acc, curr) =>{
+                    return curr.length > acc.length ? curr : acc
+            }, "")
+        }
+        console.log(longestWord(["I", "am", "learning", "React"]));
+
+        //Get the property
+        const namedata = [
+            { name: 'Alice', age: 25 },
+            { name: 'Bob', age: 30 },
+        ];
+        function extractProperty(arr, property){
+            return arr.reduce((acc, curr) =>{
+                acc.push(curr[property]);
+                return acc;
+            },[])
+        }
+        console.log(extractProperty(namedata, 'name')); // Output: ['Alice', 'Bob']
+        console.log(extractProperty(namedata, 'age'));
+    </script>
+</body>
+</html>
