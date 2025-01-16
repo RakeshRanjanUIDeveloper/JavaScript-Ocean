@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Create a function that takes an array of strings as an argument and returns a string that includes
+        // the number of items in the array and the first and last items.
+        const formatArray = (arr) =>{
+            return `The array has ${arr.length} items, and the first item is ${arr[0]}, and the last item is ${arr[arr.length-1]}`
+        }
+        const items = ['apple', 'banana', 'orange']
+        const message = formatArray(items)
+        console.log(message)
+        // The array has 3 items, and the first item is "apple", and the last item is "orange"
+    </script>
+</body>
+</html>
