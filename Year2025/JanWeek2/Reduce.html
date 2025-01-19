@@ -57,11 +57,12 @@
 ];
 
         const grouped = peoples.reduce((acc, people) => {
-            const key = people.age;  
-            if (!acc[key]) {
-                acc[key] = [];
-            } 
-            acc[key].push(people); 
+            const key = people.age;
+            console.log(key)
+            if(!acc[key]){
+                acc[key] = []
+            }
+            acc[key].push(people)
             return acc;
         }, {});
 

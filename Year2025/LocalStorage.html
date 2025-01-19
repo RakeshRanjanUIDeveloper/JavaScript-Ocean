@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: white;
+            color: black;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        body.dark {
+            background-color: black;
+            color: white;
+        }
+
+
+        button {
+            padding: 0.5rem 1rem;
+            border: none;
+            cursor: pointer;
+            background-color: #0056b3;
+            color: white;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        button:hover {
+            background-color: #003d80;
+        }
+    </style>
+</head>
+<body>
+    <h1>Local Storage Example</h1>
+    <button id="themeToggle">Toggle Theme</button>
+
+    <script>
+        const themeToggleBtn = document.getElementById('themeToggle');
+
+        themeToggleBtn.addEventListener('click', ()=>{
+            const currentTheme = document.body.className;
+            const newTheme = currentTheme === 'dark' ? '' : 'dark';
+            document.body.className = newTheme;
+            localStorage.setItem('theme', newTheme)
+        })
+
+        const savedTheme = localStorage.getItem('theme');
+        if(savedTheme){
+            document.body.className = savedTheme
+        }
+    </script>
+</body>
+
+</html>
