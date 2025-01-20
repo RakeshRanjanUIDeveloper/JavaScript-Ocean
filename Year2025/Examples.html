@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let person = {
+            fname: 'rakesh',
+            lname: 'ranjan'
+        }
+        let printFullName = function (city, country) {
+            console.log(this.fname + " " + this.lname + " " + city + " " +country);
+        }
+
+    //    Function.prototype.myBind = function(...args){
+        // let obj = this;
+        // return function(){
+            // obj.call(args[0])
+        // }
+    //    }
+// 
+    // Function.prototype.myBind = function(...args){
+        // let obj = this;
+        // let params = args.slice(1);
+        // return function(){
+            // obj.apply(args[0], params)
+        // }
+    // }
+
+    Function.prototype.myBind = function(...args){
+        let obj = this;
+        let params = args.slice(1);
+        return function(...args2){
+            obj.apply(args[0], [...params, ...args2])
+        }
+    }
+       let fullName = printFullName.myBind(person, "Koderma");
+       fullName("India")
+
+
+    </script>
+</body>
+
+</html>

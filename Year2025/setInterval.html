@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log("start");
+        let count = 0;
+       const intervalID= setInterval(() => {
+            count++;
+            console.log(count)
+            if(count === 5){
+                clearInterval(intervalID);
+                console.log("Clear Interval")
+            }
+        }, 2000);
+        console.log("end")
+    </script>
+</body>
+</html>
