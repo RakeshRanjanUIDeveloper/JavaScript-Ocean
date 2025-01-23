@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //Write an ES6 function that takes an array of numbers and returns an array with each number 
+        // incremented by 3 using the map method.
+        const incrementNumbers = (arr) => arr.map((num) => num + 3)
+        const numbers = [1, 2, 3, 4, 5]
+        console.log(incrementNumbers(numbers))
+
+        // Write an ES6 function that takes an array of strings and returns an array 
+        // with all the stringscapitalised using the map method.
+        const capitalizeArray = (arr) => arr.map((word) => word.toUpperCase())
+        const myArray = ['apple', 'banana', 'cherry']
+        console.log(capitalizeArray(myArray))
+
+        //Write an ES6 function that takes an array of objects representing people and returns an array of
+        //their ages using the map method.
+        const getAges = (arrayOfObject) => arrayOfObject.map((p) => p.age)
+        const people = [
+            { name: 'Ankit', age: 25 },
+            { name: 'Vinit', age: 24 },
+            { name: 'Shashi', age: 29 },
+        ]
+        const ages = getAges(people)
+        console.log(ages)
+
+        //Write an ES6 function that takes an array of objects representing products and returns an array
+        // with the product names in all lower case letters using the map method.
+        const getProductNamesInLowerCase = (arrayOfObject) => arrayOfObject.map((p) => p.name.toLowerCase())
+        const products = [
+            { name: 'Lip Balm', stock: 100 },
+            { name: 'PERFUME', stock: 400 },
+            { name: 'Socks', stock: 200 },
+        ]
+        console.log(getProductNamesInLowerCase(products))
+
+        //Write an ES6 function that takes an array of objects representing cities and returns an array of
+        // their names using the map method.
+        const getCityNames = (arrayOfObject) => arrayOfObject.map(c => c.name)
+        const cities = [
+            { name: 'New York', population: 8538000 },
+            { name: 'Los Angeles', population: 3976000 },
+            { name: 'Bangalore', population: 13608000 },
+        ]
+        console.log(getCityNames(cities))
+
+        //Write an ES6 function that takes an array of strings and returns an array with only the strings
+        // that have a length greater than 5.
+        const filterLongStrings = (arr) => arr.filter((fruit) => fruit.length > 5)
+        const fruits = ['apple', 'banana', 'cherry', 'watermelon', 'pineapple']
+        console.log(filterLongStrings(fruits))
+
+    </script>
+</body>
+
+</html>
