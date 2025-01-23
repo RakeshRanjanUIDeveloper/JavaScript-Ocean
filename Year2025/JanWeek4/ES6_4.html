@@ -106,11 +106,45 @@
             ],
             publisher: { name: "O'Reilly Media", location: 'CA' },
         }
-        const {title, authors:[author1, author2], publisherName:{name:publisherName} = book;
-        console.log(title) // JavaScript: The Definitive Guide
-        console.log(author1) // David Flanagan
-        console.log(author2) // Yukihiro Matsumoto
-        console.log(publisherName) // O'Reilly Media
+
+        const { title, authors, publisher } = book;
+        const [author1, author2] = authors;
+        const { name: publisherName } = publisher;
+
+        console.log(title); // JavaScript: The Definitive Guide
+        console.log(author1.name); // David Flanagan
+        console.log(author2.name); // Yukihiro Matsumoto
+        console.log(publisherName); // O'Reilly Media
+
+
+        //. Write an ES6 function that takes an array of objects and returns the sum of all ages.
+        var myArray = [
+            {
+                name: 'Jay',
+                age: 60,
+            },
+            {
+                name: 'Gloria',
+                age: 36,
+            },
+            {
+                name: 'Manny',
+                age: 16,
+            },
+            {
+                name: 'Joe',
+                age: 9,
+            },
+        ]
+        const sumOfAges = (arrayOfObjects) => {
+            let sum = 0
+                arrayOfObjects.forEach((num)=>{
+                    sum = sum + num.age
+                })
+            return sum
+        } 
+        console.log(sumOfAges(myArray)) // 121
+
     </script>
 </body>
 
