@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Given an array of objects representing people, write an ES6 function 
+        // to return a new array containing only the names of the people.
+        const people = [
+            { name: 'Raj', age: 28 },
+            { name: 'Swapnil', age: 42 },
+            { name: 'Anushka', age: 35 }
+        ];
+        const getNames = (arrayOfObjects) => {
+            let namesArray = [];
+            // arrayOfObjects.forEach(element => {
+            //         namesArray.push(element.name)
+            // });
+            arrayOfObjects.map((p) => namesArray.push(p.name))
+            return namesArray;
+        }
+        const names = getNames(people);
+        console.log(names); // Output: ['Raj', 'Swapnil', 'Anushka']
+
+        //Given an array, write an ES6 function to return a new array with all the elements multiplied by 5
+        const numbers = [1, 2, 3, 4];
+        const multiplyByFive = numbers.map((num) => num * 5)
+        console.log(multiplyByFive); // Output: [5, 10, 15, 20]
+
+
+        // Given employee’s data, write an ES6 function which greets them with a personalized message for onboarding.
+        const employeeData = [
+            { name: "ram", dept: "marketer" },
+            { name: "Radha", dept: "SDE" },
+            { name: "shyam", dept: "finance professional" },
+        ]
+        const greetEmployeeMessages = employeeData.map((e) => `Hi ${e.name} we are glad to have you as a ${e.dept}`)
+        console.log(greetEmployeeMessages);
+
+        //Write an ES6 function that takes an array of objects representing books and returns an array 
+        // with only the titles of each book.
+        const books = [
+            { title: 'The Great Gatsby', author: 'F. Scott Fitzgerald' },
+            { title: 'To Kill a Mockingbird', author: 'Harper Lee' },
+            { title: '1984', author: 'George Orwell' },
+            { title: 'Pride and Prejudice', author: 'Jane Austen' },
+        ];
+        const getBookTitles = (arrayOfObjects) => arrayOfObjects.map((t) => t.title)
+        const titles = getBookTitles(books);
+        console.log(titles);
+
+        //Write an ES6 function which takes out the names of the students whose first letter starts with ‘A’.
+        const studentName = ["Ram", "Anjali", "Arpit", "Bhanu Kumar", "Jaya", "Ankit", "shayam", "Rmaya"];
+        const studentNames = studentName.filter((s) => s.startsWith('A'))
+        console.log(studentNames)
+
+        //Write an ES6 function which filters out the products which have a price greater than 40.
+        const productData = [
+            { prodName: "Dairy Milk", price: 10 },
+            { prodName: "Dairy Milk Silk", price: 70 },
+            { prodName: "Five Star", price: 20 },
+            { prodName: "Mars", price: 50 }
+        ]
+        const getProducts = ((arrayOfObjects, filterprice) => arrayOfObjects.filter((pd) => pd.price > filterprice))
+        console.log(getProducts(productData, 40))
+
+        //Write an ES6 function that takes an array of numbers and returns the first number that is divisible by 7.
+        const numberss = [1, 2, 3, 21, 14, 7];
+        const isDivisibleBy7 = numberss.filter((num) => num % 7 === 0)[0]
+        console.log(isDivisibleBy7)
+
+        //Write an ES6 function that takes an array of strings and returns the first string that is longer than 8 characters.
+        const namess = ["Mohan", "Anjali", "Geetanjali", "Ankit", "Bhanu Kumar", "Ramakrishnan"];
+        // const isNamesGreaterThan8 = (namess) => namess.filter((n) => n.length > 8)[0]
+        const isNamesGreaterThan8 = (names) => names.find((n) => n.length > 8);
+        console.log(isNamesGreaterThan8(namess));
+
+        //Write an ES6 function that takes an array of objects representing students with properties name
+        // and grade. Return the first student object that has a grade of "A".
+        const students = [
+            { name: "John", grade: "B" },
+            { name: "Mary", grade: "A" },
+            { name: "Sam", grade: "C" },
+            { name: "Sarah", grade: "A" },
+        ];
+        const findStudentWithGradeA = (students) => students.find((s) => s.grade === 'A')
+        const studentWithGradeA = findStudentWithGradeA(students);
+        console.log(studentWithGradeA);
+
+        //Write an ES6 function that takes an array of objects representing students with properties name,
+        // grade and scholarship. Return the first student object that has a grade of "A" or they are a
+        // scholarship student.
+        const studentss = [
+            { name: "John", grade: "B", scholarship: false },
+            { name: "Mary", grade: "B", scholarship: true },
+            { name: "Sam", grade: "A", scholarship: false },
+            { name: "Sarah", grade: "A", scholarship: true },
+        ];
+        const findStudent = (studentss) => studentss.find((s) => s.grade === 'A' || s.scholarship === true)
+        const student = findStudent(studentss);
+        console.log(student);
+
+        //. Write an ES6 function that takes an array of objects representing students with properties name
+        // and grade. Return the first student object that has a grade of "B" and they are also a scholarship student.
+        const studentsss = [
+            { name: "John", grade: "B", scholarship: false },
+            { name: "Mary", grade: "A", scholarship: true },
+            { name: "Sam", grade: "A", scholarship: false },
+            { name: "Sarah", grade: "B", scholarship: true },
+        ];
+        const findStudentt = (studentsss) => studentsss.find((s) => s.grade === 'B' && s.scholarship === false)
+        const studentt = findStudentt(studentsss);
+        console.log(studentt);
+
+        //. Write an ES6 function that takes an array of objects containing Bollywood movie information
+        // (title, director, year, rating) and returns an array with only the movie titles that were made before
+        // 1990 and has a rating above 8.0.
+        const bollywoodMovies = [
+            { title: 'Sholay', director: 'Ramesh Sippy', year: 1975, rating: 8.2 },
+            { title: 'Amar Akbar Anthony', director: 'Manmohan Desai', year: 1977, rating: 7.6 },
+            { title: 'Namak Halaal', director: 'Prakash Mehra', year: 1982, rating: 7.4 },
+            { title: 'Mr. India', director: 'Shekhar Kapur', year: 1987, rating: 7.8 },
+            { title: 'Qayamat Se Qayamat Tak', director: 'Mansoor Khan', year: 1988, rating: 7.6 },
+            { title: 'Parinda', director: 'Vidhu Vinod Chopra', year: 1989, rating: 8.1 },
+            { title: 'Dil', director: 'Indra Kumar', year: 1990, rating: 7.8 }
+        ];
+        const getBestOldBollywoodMovies = (arrayOfObjects) => arrayOfObjects.filter((m) => m.year<1990 && m.rating>8).map((t) => t.title)
+        const bestOldMovies = getBestOldBollywoodMovies(bollywoodMovies);
+        console.log(bestOldMovies);
+
+    </script>
+</body>
+
+</html>
