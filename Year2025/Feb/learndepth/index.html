@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log(5 && 1); // && operator return last truthy value
+        console.log(5 || 1); // || operator return first truthy value
+
+        console.log(typeof null) //Object
+        console.log(typeof undefined) //undefined
+        console.log(typeof NaN) // Number
+        console.log(typeof function(){}) // Function
+
+        let x = 123;
+        let y = new Number(123);
+        console.log(typeof x, typeof y)
+        console.log(x===y)
+
+        //Unary operator converts into number or numeric value
+        console.log(+true); //1
+        console.log(+false); //0
+        console.log(+"123"); //123 Number
+        console.log(+null); //0
+
+        setTimeout(()=>{
+            console.log("setTimeout later")
+        },0)
+
+        Promise.resolve().then(() =>{
+            console.log("Promise first")
+        })
+
+        console.log("1")
+        setTimeout(()=>{
+            console.log("2")
+        },0)
+        console.log("3") // 132
+
+        console.log(1+2+"3")
+
+        const [q, w=5] = [10];
+        console.log(q+w)
+
+        console.log(1+'2'+3)
+
+        console.log(!!{})
+        console.log(!![])
+
+        console.log(1 || 2 && 3);
+
+        let arr = [1,2];
+        for(var i=0; i<arr.length; i++){
+            setTimeout(()=>{
+                console.log(i)
+            })
+        }
+
+        let j='10';
+        console.log(j++);
+        console.log(j)
+
+        const arrr = [1,2,3,4];
+        console.log(1 in arrr);
+        console.log(2 in arrr);
+        console.log(4 in arrr);
+
+        console.log(+"8" + 1 + 2)
+
+        console.log(arrr.find((x) => x >2 ))
+        console.log(arrr.filter((x) => x > 2))
+
+        const obj = {
+            age:32
+        }
+        let {age:userage} = obj;
+        console.log(userage);
+   /*      console.log(age); */
+
+        console.log(arrr.pop())
+        console.log(arrr.shift())
+
+        const user = {
+            name : "rakesh",
+            address : null
+        }
+        /* console.log(user.address.street) // TypeError  */
+        console.log(user.address?.street)
+
+        const strr = "1,2,3";
+        const strarr = [1,2,3];
+        console.log(strr == strarr)
+
+        const g ="5";
+        const h=true;
+        console.log(g-h)
+
+        const m = "h,e".split(",");
+        const n = ["h", "e"];
+        console.log(m==n);
+        console.log(m===n)
+
+        console.log(1+2+"3") //33
+        console.log("1" + 2 +3) // 123
+    </script>
+</body>
+</html>
