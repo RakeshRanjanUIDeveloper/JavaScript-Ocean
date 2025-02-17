@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Given an array, write an ES6 function that returns the total length of all the strings in an array
+        const strings = ['apple', 'banana', 'cherry', 'date', 'blueberry'];
+        const totalLength = arr => strings.reduce((acc, curr) => acc + curr.length, 0)
+        console.log(totalLength(strings))
+
+        //Write an ES6 function sumSquares that takes an array of numbers and returns the sum of the
+        // squares of all the numbers in the array
+        const numbers = [1, 2, 3, 4, 5]
+        const sumSquares = arr => numbers.reduce((acc, curr) => acc + curr * curr, 0)
+        console.log(sumSquares(numbers))
+
+        //Write an ES6 function that calculates and returns the total value of all items in an array of objects.
+        const items = [
+            { name: 'Item 1', price: 10 },
+            { name: 'Item 2', price: 20 },
+            { name: 'Item 3', price: 30 },
+        ]
+        const totalValue = arrayOfObjects => arrayOfObjects.reduce((acc, curr) => acc + curr.price, 0)
+        console.log(totalValue(items))
+
+        //Write an ES6 function that takes an array of strings as input and concatenates them into a single string.
+        const concatStrings = arr => arr.reduce((acc, curr) => acc + curr)
+        console.log(concatStrings(['this', 'is', 'fun']))
+
+        // Write an ES6 function to multiply and return all the elements of a given array.
+        const numbbers = [1, 2, 3, 4, 5]
+        const product = arr => arr.reduce((acc, curr) => acc * curr)
+        console.log(product(numbbers))
+
+        //Write an ES6 function that takes an array of strings and returns the longest string.
+        const sttrings = ['neogcamp', 'Haule Haule', 'code', 'Batman', 'Awesome'];
+        const longestString = arr => arr.reduce((acc, curr) => acc.length > curr.length ? acc : curr);
+        console.log(longestString(sttrings));
+
+        //Write an ES6 function that takes an array of objects with name and age property, and returns the
+        // name of the oldest person.
+        const people = [
+            { name: 'Jeena', age: 25 },
+            { name: 'Priya', age: 30 },
+            { name: 'Naina', age: 45 },
+        ]
+        const oldestPersonName = arrayOfObjects => arrayOfObjects.reduce((acc, curr) => acc > curr.age ? acc : curr)
+        console.log(oldestPersonName(people))
+
+        //Write an ES6 function that takes an array of objects representing people with properties name
+        // and age, and returns an object with the average age of all the people.
+        const peopllee = [
+            { name: 'Alice', age: 25 },
+            { name: 'Bob', age: 30 },
+            { name: 'Charlie', age: 35 },
+            { name: 'David', age: 40 },
+        ];
+        const getAverageAge = arrayOfObjects => arrayOfObjects.reduce((acc, curr) => acc + curr.age, 0) / 4
+        console.log(getAverageAge(peopllee))
+
+        //Write an ES6 function that takes an array of objects representing products with properties name,
+        // price, and quantity, and returns an object with the most expensive product.
+        const products = [
+            { name: 'Bread', price: 10, quantity: 2 },
+            { name: 'Clips', price: 20, quantity: 5 },
+            { name: 'Knife', price: 30, quantity: 1 },
+            { name: 'Slipper', price: 40, quantity: 3 },
+        ]
+        const findMostExpensiveProduct = arrayOfObjects => arrayOfObjects.reduce((acc, curr) => acc > curr.price ? acc : curr)
+        console.log(findMostExpensiveProduct(products));
+
+        //Write an ES6 function that takes an array of strings and returns an object with the count of each string.
+        const fruits = [
+            'apple',
+            'banana',
+            'banana',
+            'cherry',
+            'apple',
+            'apple',
+            'banana',
+        ]
+        const countStrings = arr => arr.reduce((acc, curr) => {
+            if(acc[curr]){
+                acc[curr] = acc[curr] + 1
+            }else{
+                acc[curr] = 1
+            }
+            return acc
+        }, {})
+        console.log(countStrings(fruits))
+
+    </script>
+</body>
+
+</html>

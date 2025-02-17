@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const fixString = (str) => {
+            // return str.split('K').join('');
+            console.log(str.split(""));
+            return str.split("").map((char) => char !== 'K' ? char : "").join("");
+        }
+        console.log(fixString("KodeKarma"));
+
+
+        //if inputs are numbers they should be added normally
+        //if inputs are strings, they should be concatenated.
+        // if one of the input is a string and other one is boolean or number then it should be coerce the 
+        // non string value into string and concatenae
+        function addWithCoercion(a, b) {
+            if (typeof a === 'number' && typeof b === 'number') {
+                return a + b
+            } else if (typeof a === 'string' && typeof b === 'string') {
+                return a + b
+            } else {
+                return String(a) + String(b)
+            }
+            return sum
+        }
+        console.log(addWithCoercion(5, 10));
+        console.log(addWithCoercion("5", 10));
+        console.log(addWithCoercion(true, 10));
+        console.log(addWithCoercion("hello", "World"));
+        console.log(addWithCoercion(5, "10"));
+
+
+        //Ensure that the fruit variable outside the block retains its original value apple.
+        //Modify the code to achieve this behavior using the appropriate variable declaration keyword.
+        var fruit = 'apple';
+        function checkFruitScope() {
+            if (true) {
+                var fruit = 'orange';
+                console.log("Inside block:", fruit)
+            }
+            console.log('Outside block:', fruit);
+        }
+        checkFruitScope()
+    </script>
+</body>
+
+</html>
