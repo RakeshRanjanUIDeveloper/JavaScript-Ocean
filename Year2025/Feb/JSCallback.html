@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="total"></div>
+    <script>
+        function displayResult(value) {
+            document.getElementById('total').innerHTML = value
+        }
+        function calculate(num1, num2) {
+            let sum = num1 + num2;
+            // return sum
+            displayResult(sum)
+        }
+        const result = calculate(5, 4);
+        // displayResult(result)
+
+        //We have to call two functions to display the result.
+
+        //We cannot prevent the calculate function from displaying the result.
+
+        function displayAddition(value){
+            console.log(value);
+        }
+        function calculateAddition (value1, value2, callback){
+            let total = value1 + value2;
+            callback(total)
+        }
+        calculateAddition(4,4, displayAddition);
+
+        //Using a callback, We could call the calculate function  with a callback.
+        // let the calculate function run the callback after the calculation is finished:
+       // The real advantage of using a callback function in your example lies in flexibility and separation of concerns.
+       // we can reuse the same function for different tasks.
+
+
+       //Remove negative Numbers 
+       const myNumbers = [4, 1, -20, -7, 5, 9, -6];
+
+    //    function showPositive(arr){
+    //         console.log(arr);
+    //    }
+    //    function removeNegative(arr, callback){
+    //         const posNumbers = arr.filter((num) => num>=0);
+    //         callback(posNumbers)
+    //    }
+    //    removeNegative(myNumbers, showPositive)
+
+        const posNumbers = removeNegative(myNumbers, (x) => x>= 0);
+        console.log(posNumbers);
+        function removeNegative (numbers, callback){
+                let myArray = [];
+                for (const x of numbers) {
+                    if(callback(x)){
+                        myArray.push(x)
+                    }
+                }
+                return myArray
+        }
+
+
+        // setTimeout(myFunction, 5000);
+        // function myFunction(){
+        //     console.log("I will be printed after 5 sec");
+        // }
+
+        setTimeout(function(){
+            console.log("I am availeble after 5 sec");
+        }, 5000)
+
+
+        // function myWatch(){
+        //     const d = new Date();
+        //     console.log(d.getHours() + ":" + d.getMinutes() + ":" +d.getSeconds());
+        // }
+        // setInterval(myWatch, 1000);
+    </script>
+
+</body>
+
+</html>

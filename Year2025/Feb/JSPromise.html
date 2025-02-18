@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function display(value){
+            console.log(value);
+        }
+
+        let myPromise = new Promise((resolve, reject) =>{
+            let x=0;
+            x===0 ? resolve("OK"):reject("Error")
+        })
+        myPromise
+            .then(display)
+            .catch(display)
+
+        
+        let myPromise2 = new Promise((resolve, reject) =>{
+            setTimeout(() =>{
+                resolve("Print in 10 sec");
+            }, 10000)
+        })
+        myPromise2
+            .then((res) => console.log(res))
+            .catch((error) => console.log(error))
+    </script>
+</body>
+</html>
