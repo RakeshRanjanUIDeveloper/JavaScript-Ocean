@@ -13,8 +13,35 @@
     <script>
         const search = document.getElementById('search');
         const result = document.getElementById('result');
+        let userResults = [];
+        window.onload = function(){
+            displayNames(userResults)
+        }
+
+        // step 2 - display result in UI
+        const displayNames = (userResults) =>{
+           result.innerHTML = '';
+           const usersHTML = userResults.map((user) => (
+                `<div class="user">
+                    <p>${user.firstName}</p>
+                </div>`
+           )).join('');
+           result.innerHTML = usersHTML;
+        }
+
+        // search functionality
         
-        
+        // step 1 - call the api to get list of users- done
+        const getUserData = async () =>{
+            const data = await fetch('https://dummyjson.com/users');
+            const results = await data.json();
+            const userResults = results.users;
+            displayNames(userResults)
+        }
+        getUserData();
+
+
+
     </script>
 </body>
 </html>

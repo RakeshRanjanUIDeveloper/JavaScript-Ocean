@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const people = [
+            {
+                name: 'Saiteja',
+                age: 28,
+                position: 'Developer'
+            },
+            {
+                name: 'Bala',
+                age: 31,
+                position: 'QA'
+            },
+            {
+                name: 'Karthik',
+                age: 23,
+                position: 'Support'
+            }
+        ]
+        const ages = people.map(() => {});
+        console.log(ages);// [undefined, undefined, undefined]
+
+        const agess = people.map((p)=>{
+            //return "Hello"
+            return p
+        })
+        console.log(agess);
+
+        const newPeople = people.map((item) => {
+            return {
+                fname: item.name,
+                age : item.age
+            }
+        })
+        console.log(newPeople);
+
+        const getAges = (p) => p.age;
+        const agesss = people.map(getAges)
+        console.log(agesss);
+    </script>
+</body>
+
+</html>
