@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const person ={
+            name:'Rakesh'
+        }
+        console.log(person.name);
+        person.age = 25;
+        console.log(person);
+
+        const items = {
+            'featured-items' : ['item', 'item2']
+        }
+        console.log(items['featured-items']);
+        console.log(person["name"]);
+
+
+        let appState = 'loading';
+        appState = 'error';
+        const keyName = 'computer';
+        const app = {
+            [appState] : true
+        }
+        app[keyName] = 'Apple';
+        console.log(app);
+
+        //Dynamic Object Keys
+        const state = {
+            name: 'John',
+            age : '',
+            job : ''
+        }
+
+        function updateState(key, value){
+            state[key] = value
+        }
+
+        updateState('name', 'Rakesh');
+        updateState('age', 32);
+        updateState('job', 'Developer');
+        updateState('city', 'Bangalore');
+        console.log(state);
+
+
+        let dynamicKey= "name";
+        let personn = {
+            [dynamicKey] : 'Rakesh'
+        }
+        console.log(personn.name); //Rakesh
+
+        let uniqueId = '123';
+        let item = {
+            [`data-${uniqueId}`] : 'Value'
+        }
+        console.log(item['data-123']);
+
+        let key = 'status';
+        let order = {
+            id:1,
+            status : 'Shipped'
+        }
+        console.log(order[key]);
+
+
+        let user = { id: 2, username: 'johndoe', email: 'john@example.com' };
+        for(let key of Object.keys(user)){
+            console.log(key);
+        }
+
+        for(let value of Object.values(user)){
+            console.log(value);
+        }
+
+        for(let [key,value] of Object.entries(user)){
+            console.log(`${key} : ${value}`);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        li{
+            font-size: 20px;
+            font-weight: 400;
+            font-family: Graphik;
+            line-height: 1.2;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>With the var keyword, you can declare multiple variables with the same name. The variable will then hold the latest value. <br/> You cannot do this with let or const since they're block-scoped.</li>
+        <li>variable gets hoisted (memory space is set up during the creation phase) with the default value of undefined</li>
+        <li>let keyword (and const) are hoisted, but unlike var, don't get initialized. They are not accessible before the line we declare (initialize) them. This is called the "temporal dead zone". When we try to access the variables before they are declared, JavaScript throws a ReferenceError.</li>
+        <li>The unary plus tries to convert an operand to a number.</li>
+        <li>Coercion is converting from one type into another.</li>
+        <li>Values can automatically be converted into another type without you knowing, which is called implicit type coercion. </li>
+        <li>The continue statement skips an iteration if a certain condition returns true.</li>
+
+    </ul>
+    <script>
+        var x= 10;
+        var x = 20;
+        console.log(x); // 20
+
+        function sayHi(){
+            console.log(name); // undefined
+            console.log(age); // ReferenceError: Cannot access 'age' before initialization
+            var name= 'Ayush';
+            let age = 21;
+        }
+        // sayHi();
+
+        // function getAge (){
+        //     'use strict'
+        //     age=21;
+        //     console.log(age); // age is not defined
+        // }
+        // getAge();
+
+        console.log(+true); // 1
+        console.log(!'Rakesh'); // false
+
+        let number = 0;
+        console.log(number++); //0
+        console.log(++number); //2
+        console.log(number); //2
+
+        function sum(a,b){
+            return a+b // 1+"2" // string concatenation 
+        }
+        sum(1, "2")
+
+        for(let i=1; i<5; i++){
+            if(i===3) continue;
+            console.log(i); // 1,2,4 
+        }
+
+        function sayHii(){
+            return (
+                () => 0
+            )();
+        }
+        console.log(typeof sayHii);
+    </script>
+</body>
+</html>
