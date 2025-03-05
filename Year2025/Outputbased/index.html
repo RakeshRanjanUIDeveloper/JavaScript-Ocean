@@ -68,6 +68,27 @@
             )();
         }
         console.log(typeof sayHii);
+
+
+        //Remove Duplicate characters from String
+        var mystr = 'priya riya supriya'
+        var totalLength = mystr.length;
+        var actualStrArray = mystr.split('');
+        const printCharacter = (actualStrArray) => {
+            // for(var i=0; i<totalLength; i++){
+            //    console.log(actualStrArray);
+            // }
+            const result = actualStrArray.filter((item, index, arr) => arr.indexOf(item) === index).join('');
+            return result
+        }
+        console.log(printCharacter(actualStrArray));;
+
+
+
+        //Remove Duplicate characters from array of element using filter
+        var myArray = ['a', 1, 'a', 2, '1'];
+        const result = myArray.filter((item, index, array) => array.indexOf(item) === index);
+        console.log(result);
     </script>
 </body>
 </html>
