@@ -9,6 +9,7 @@
 
 <body>
     <script>
+<<<<<<< HEAD
         // String reverse without reversing of individual words
         let mystr = "India is a capital";
         const result = mystr.split('').reverse().join('').split(' ').reverse().join(' ')
@@ -45,6 +46,119 @@
         }
 
         
+=======
+       // String reverse without reversing of individual words
+       let mystr = "India is a capital";
+       const result = mystr.split('').reverse().join('').split(' ').reverse().join(' ')
+       console.log(result);
+
+       // Swapping of 2 numbers with third variable
+       let a =10;
+       let b = 20;
+       let c;
+       c=a; // c=10
+       a=b; // a=20
+       b=c;
+       console.log(a, b)
+    
+       //Swapping of 2 numbers without third variable
+
+       let x=11;
+       let y= 22;
+       console.log(x,y)
+        x= x+y; //33
+        y= x-y // 11
+        x= x-y // 22
+        console.log(x,y)
+
+        //Code 11: To check the string or number is palindrome or not( ex: 121,madam,anna) using reverse method
+        function checkPalindrone(str){
+            const result = str.split('').reverse().join('');
+            if(result === str){
+                console.log(`${str} is a palindrome`)
+            }else{
+                console.log(`${str} is not a palindrome`)
+            }
+        }
+        checkPalindrone('Hello')
+        checkPalindrone('amma')
+
+        //Code 12: To check the string or number is palindrome or not( ex: 121,madam,anna) 
+        // using diving length by 2 and then comparing
+        function checkmyPalindrome(str){
+            const totalLength = str.length;
+            for(i=0 ; i< Math.floor(totalLength / 2); i++){
+                if(str[i] === str[totalLength-1-i]){ 
+                    console.log(`${str} not a palindrome`)
+                    return;
+                }
+            }
+            console.log(`${str} is a palindrome`);
+        }
+        checkmyPalindrome('Hello');
+        checkmyPalindrome('AMMA')
+
+     //Code 13: To find longest word from a string 
+     function findLongest (str) {
+        const words = str.split(' ');
+        console.log(words)
+        const wordsLength = words.map((word) => ({word, length:word.length}))
+        console.log(wordsLength)
+        const longestWordObj = wordsLength.reduce((prev, current) =>{
+            return (prev.length > current.length) ? prev :current
+        })
+        console.log(longestWordObj)
+        return longestWordObj.word
+     }
+     console.log(findLongest("Hello I want to learn Basics first"))
+
+     // longest
+     function getLongest(str){
+        const words = str.split(' ');
+        console.log(words)
+        //return words.sort((a,b) => b.length - a.length)[0]
+        let index = words.reduce((acc, curr, i) => {
+            if(curr.length > words[acc].length){
+                return i
+            }
+            return acc;
+        }, 0)
+        return words[index]
+     }
+     console.log(getLongest("Hello I am ok and Alright"));
+
+     //Code 17: To find vowels and its count in a given string
+     function getVowelsandLength(str){
+        let vowels = ['a', 'e', 'i', 'o', 'u']
+        let mystr = str.split(''); //['R', 'a', 'k', 'e', 's', 'h']
+        let count = 0;
+        for(i=0; i<mystr.length; i++){
+           if(vowels.includes(mystr[i])){
+                count++;
+                console.log(mystr[i])
+           }
+        }
+        console.log(count)
+        return count
+     }
+     getVowelsandLength("Rakesh")
+
+     //Code 18:To find character occurance fro the string
+     function findOccurance(str, letter){
+        let mystr = str.split('');
+        console.log(mystr) // ['R', 'a', 'k', 'e', 's', 'h', 'R', 'a', 'n', 'j', 'a', 'n']
+        let count = 0;
+        for(i=0; i<mystr.length; i++){
+            if(mystr[i].includes(letter)){
+                count++
+            }
+        }
+        console.log(count);
+        return count
+       
+     }
+     findOccurance("RakeshRanjan", "R")
+>>>>>>> 209a1efa569cc978a2a23a84473b7580b58ce90c
     </script>
 </body>
 
