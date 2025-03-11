@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        console.log(person);
+        var person = 'Rakesh';
+        console.log(person);
+
+        greet();
+        function greet() {
+            console.log("Hello");
+        }
+
+        // console.log(name); // ReferenceError Cannot access 'name' before initialization
+        let name = 'Alice';
+        console.log(name);
+
+        function validateForm() {
+            console.log(formName);
+            var formName = 'Registration Form';
+            console.log(formName);
+        }
+        validateForm();
+
+        greetUser();
+        function greetUser() {
+            console.log("Welcome to the Website");
+        }
+
+        function submitForm() {
+            // console.log(formStatus); //ReferenceError: Cannot access 'formStatus' before initialization
+            let formStatus = 'valid'
+            console.log(formStatus);
+        }
+        submitForm()
+
+        function printValue() {
+            //Fix the code so that it works without throwing a ReferenceError
+            console.log(value);
+            let value = 'Inside the function';
+            console.log(value);
+        }
+        printValue()
+
+
+        var message = "Hello, World!";
+        console.log(message);
+        printMessage();
+        function printMessage() {
+            console.log("Function says: Hello!")
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //Global Scope
+        let message = "Hello Rakesh";
+        function displayMessage() {
+            console.log(message);
+        }
+        displayMessage();
+
+        //Local Scope
+        function displayPrivateMessage() {
+            let message = "Hello Rakesh in Local Scope";
+            console.log(message);
+        }
+        displayPrivateMessage();
+
+        //Block Scope
+        function displayBlockMessage() {
+            if (true) {
+                let message = 'Hello Rakesh in Block Scope'
+                console.log(message);
+            }
+            // console.log(message); // Hello Rakesh
+        }
+        displayBlockMessage();
+
+        //Lexical Scope and CLosure
+        function func1() {
+            let privateMessage = 'We want to travel';
+            return function func2() {
+                console.log(privateMessage);
+            }
+        }
+        let allMessage = func1();
+
+
+        //closure
+        function createSecret() {
+            let message = 'Learn JS';
+            return {
+                revealSecret: function () {
+                    console.log(message);
+                },
+                updateSecret: function (newMessage) {
+                    message = newMessage
+                }
+            }
+        }
+        let secretKeeper = createSecret()
+        secretKeeper.revealSecret();
+        secretKeeper.updateSecret("Learning React");
+        secretKeeper.revealSecret();
+
+        //Global Scope
+        let userRole = "admin";
+        function checkPermission() {
+            if (userRole === 'admin') {
+                console.log("You have access");
+            } else {
+                console.log("Access Denied");
+            }
+        }
+        checkPermission();
+
+
+        //Local Scope
+        function fetchData() {
+            let message = 'Loading.....';
+            console.log(message);
+            setTimeout(() => {
+                console.log("Data Loading Successfully");
+            }, 2000)
+        }
+        fetchData();
+
+        //Block Scope
+        for (i = 0; i < 3; i++) {
+            let myMessage = `Hello ${i}`;
+            console.log(myMessage);
+        }
+        // console.log(myMessage);
+
+        //Closure
+        function createCount() {
+            let count = 0;
+            return function () {
+                count++;
+                console.log(count);
+            }
+        }
+        const counter = createCount();
+        counter();
+        counter();
+        counter();
+
+        //Scope Issue
+        function calculatePrice(price, discount) {
+            let discountedData = [];
+            for (let i = 0; i < price.length; i++) {
+                let discountedPrice = price[i] * (1 - discount);
+                let finalPrice = Math.round(discountedPrice * 100) / 100;
+                discountedData.push(finalPrice)
+                console.log(discountedPrice);
+                console.log(finalPrice);
+            }
+            return discountedData;
+        }
+        calculatePrice([100, 200, 300], 0.5)
+
+        //Closure
+        function outerFunction() {
+            var outerVar = 'I am from the outer function';
+            function innerFunction() {
+                console.log(outerVar)
+            }
+            return innerFunction;
+        }
+        var closureExample = outerFunction();
+        closureExample();
+
+
+        var globalVar = 'I am global';
+        function scopeExample() {
+            var localVar = "I am Local";
+            if (true) {
+                var blockVar = "I am block scoped with var";
+                let blocklet = "I am block scoped with let"
+                let blockConst = "I am block scoped with const";
+                console.log(blockVar)
+                console.log(blocklet)
+                console.log(blockConst)
+            }
+            console.log(localVar)
+            console.log(globalVar)
+        }
+        scopeExample();
+
+
+        function BankAccount(initialBalance) {
+                let balance = initialBalance;
+                function deposit(depositAmount) {
+                    balance = balance + depositAmount
+                }
+                function withdraw(withdrawAmount) {
+                    balance = balance - withdrawAmount
+                }
+                function getBalance(){
+                    return balance;
+                }
+                return {
+                    deposit, withdraw, getBalance
+                }
+        }
+
+        const account1 = BankAccount(1000);
+        const account2 = BankAccount(500);
+
+        account1.deposit(500);
+        console.log(account1.getBalance());
+
+        account1.withdraw(200);
+        console.log(account1.getBalance());
+
+        account2.deposit(500);
+        console.log(account2.getBalance());
+
+        console.log(account1.balance);
+    </script>
+
+</body>
+
+</html>
