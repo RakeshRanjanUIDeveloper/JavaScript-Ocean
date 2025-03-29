@@ -1,16 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <script>
+
+        // String reverse without reversing of individual words
+        let mystr = "India is a capital";
+        const result = mystr.split('').reverse().join('').split(' ').reverse().join(' ')
+        console.log(result);
+
+
+        let arr = ['a', 1, 2, 'a', 1];
+        const output = arr.filter((value, index, array) => arr.indexOf(value) === index);
+        console.log(output);
+
+        //String reverse without using inbult function
+        let word = 'Hello how are you';
+        function reverse() {
+            let result = '';
+            for (let i = word.length - 1; i >= 0; i--) {
+                result = result + word[i]
+            }
+            return result
+        }
+        console.log(reverse());
+
+        // 7. Factorial of the given number
+        const number = parseInt(prompt("Enter any number to know the factorial..."));
+        if (number < 0) {
+            console.log("Error! Factorial for negative number does not exist.");
+        } else if (number === 0) {
+            console.log(`The Factorial is 1`);
+        } else {
+            let fact = 1;
+            for (i = 1; i <= number; i++) {
+                fact = fact * i
+            }
+            console.log(`The Factorial is ${fact}`);
+        }
+
+        
        // String reverse without reversing of individual words
-       let mystr = "India is a capital";
-       const result = mystr.split('').reverse().join('').split(' ').reverse().join(' ')
-       console.log(result);
+       let mystr1 = "India is a capital";
+       const result1 = mystr1.split('').reverse().join('').split(' ').reverse().join(' ')
+       console.log(result1);
 
        // Swapping of 2 numbers with third variable
        let a =10;
@@ -120,4 +159,5 @@
      findOccurance("RakeshRanjan", "R")
     </script>
 </body>
+
 </html>

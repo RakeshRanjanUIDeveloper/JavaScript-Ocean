@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Function Declaration // named Function
+        function goonDate(){
+            console.log("Let's go for a Date!!");
+        }
+        goonDate();
+
+        //Function Expression //Anonymous Function
+        const goonDatee = function(){
+            console.log("Let's go for a Date!!");
+        }
+        goonDatee();
+
+        //Arrow Function
+        const goonDateee = () =>{
+            console.log("Let's go for a Date!!");
+        }
+        goonDateee();
+
+        //IIFE
+        (function(){
+            console.log('This function runs immediately!');
+        })();
+
+        //HOFs
+        function askForDate(callback){
+            console.log("Should we go for a date ?");
+            callback()
+        }
+        askForDate(() =>{
+            console.log("Yes, Let's go for Dinner");
+        })
+
+        //Callback Functions
+        function sayHello(name, callback){
+            console.log(`Hello ${name}`);
+            callback();
+        }
+        sayHello("john", () =>{
+            console.log("Its nice to meet you");
+        })
+
+        //constructor function
+        function Employee(name,age){
+            this.name=name;
+            this.age = age;
+        }
+        const emp1 = new Employee("Ranjan", 30);
+        console.log(emp1.name);
+
+        //Function Parameters and Return Values
+        function calculateTotal (billAmount, tip){
+            return billAmount+tip
+        }
+        const total = calculateTotal(500,20);
+        console.log(total);
+
+        //Rest parameter and Spread Operator
+        function makePizza(...toppings){
+            console.log("Pizza with toppings - " +toppings);
+        }
+        makePizza("Cheese", "Tomato", "Olives")
+
+        const friends = ['raj', 'ram'];
+        const allFriends = [...friends, "Shyam"];
+        console.log(allFriends);
+    </script>
+</body>
+</html>

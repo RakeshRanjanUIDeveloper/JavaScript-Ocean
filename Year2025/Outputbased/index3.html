@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //To find a first pair whose sum is zero
+        function getSumPairZero(myarray){
+            for (let i = 0; i < myarray.length; i++) {    
+                for (let j = 1; j < myarray.length; j++) {
+                    if(myarray[i] + myarray[j] === 0){
+                        return [myarray[i], myarray[j]]
+                    }
+                }
+                
+            }
+        }
+        const result = getSumPairZero([-5,-4,-3,-2,-1,0,1,2,3,4,5])
+        console.log(result)
+
+        // get largest pair
+        function getLargest(myarray){
+            let arr = myarray.sort((a,b) => b - a);
+            return arr[0] + arr[1]
+        }
+        const resultt = getLargest([9,7,8,4,5,6,1,2,3])
+        console.log(resultt)
+
+        //To find the index of an element from an array
+        let newArray = ["a", "b", "c"];
+        let index = newArray.indexOf("a");
+        console.log(index);
+
+        //Code 25: Fibonacci Series 
+        function makeFabonacci(n){
+            let arr = [0,1];
+            for(let i=1; i<n ; i++){
+                arr.push(arr[i] + arr[i-1])
+            }
+            return arr
+        }
+        console.log(makeFabonacci(4));
+
+        //Code 26: Finding a missing elements in an array and then add with existing elements.
+        let values = [1,2,5];
+        let missingValues = [];
+        function missingElement(arr){
+            for(i=0; i<6; i++){
+                if(values.indexOf(i) === -1){
+                    missingValues.push(i)
+                }
+            }
+            console.log(missingValues);
+        }
+        missingElement(values)
+
+        var fruit = 'apple';
+function checkFruitScope() {
+  if(true){
+    let fruit = 'orange';
+    console.log("Inside block:", fruit)
+  }
+  console.log('Outside block:',  fruit);
+}
+checkFruitScope()
+    </script>
+</body>
+</html>
