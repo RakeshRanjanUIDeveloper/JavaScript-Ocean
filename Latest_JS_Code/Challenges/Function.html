@@ -106,17 +106,34 @@ function addToList(list, item) {
   return list
 }
 
-function randomGreeting(name) {
-  const greetings = ["Hello", "Hi", "Hey"];
-  const randomIndex = Math.floor(Math.random()* greetinf.length);
-  return `${greetings[randomIndex]}, ${name}!`;
-}
+// function randomGreeting(name) {
+//   const greetings = ["Hello", "Hi", "Hey"];
+//   const randomIndex = Math.floor(Math.random()* greetinf.length);
+//   return `${greetings[randomIndex]}, ${name}!`;
+// }
 
-console.log(multiple(5));
-const numbers = [1,2,3];
-console.log(addToList(number,4));
-console.log(randomGreeting("Alice"))
-module.exports = { multiply, addToList, randomGreeting };
+// console.log(multiple(5));
+// const numbers = [1,2,3];
+// console.log(addToList(number,4));
+// console.log(randomGreeting("Alice"))
+// module.exports = { multiply, addToList, randomGreeting };
+
+
+
+function convertToMinutes(hours){
+  let totalMinutes = hours*60;
+  console.log(totalMinutes);
+}
+convertToMinutes(0.25);
+
+const createCounter = (n) => {
+   let count = n;
+   return () => count++;
+}
+const counter = createCounter(10);
+console.log(counter());
+console.log(counter());
+console.log(counter());
     </script>
 </body>
 

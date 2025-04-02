@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const partner = {
+            name:'Alex',
+            age:28,
+            hobbies : ["cooking", "reading", "travelling"],
+            cook: function(){
+                console.log(`${this.name} is cooking dinner`);
+            }
+        }
+        console.log(partner.name);
+        console.log(partner.hobbies[1]);
+        partner.cook();
+
+        const friend = {nickName:"Buddy", fullName: "John Doe"};
+        console.log(friend["nickName"]);
+        console.log(friend["fullName"]);
+
+        const crush = {name:'Taylor', likes:'movies'};
+        crush.phonenumber ="123-456-789";
+        crush.likes = "music";
+        delete crush.phonenumber;
+        console.log(crush);
+
+        const friends = ["john", "Mike", "Sara"];
+        console.log(friends[0]);
+        console.log(friends.length);
+
+        friends.push("Emma");
+        console.log(friends);
+        friends.pop();
+        console.log(friends);
+
+        friends.unshift("Liam");
+        console.log(friends);
+        friends.shift();
+        console.log(friends);
+
+
+        const playfriends = friends.slice(1,3);
+        console.log(playfriends);
+    </script>
+</body>
+</html>
