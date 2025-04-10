@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const crush = {
+            likes: ["Movies", "Music"],
+            sayHi: function () {
+                return "Hi, Let's handout"
+            }
+        }
+        //create friend object inheriting from crush
+
+        const friend = Object.create(crush);
+        friend.sharedSecrets = ["Vacation Plans"]
+        console.log(friend.likes);
+        console.log(friend.sayHi());
+        console.log(friend.sharedSecrets);
+
+        const husband = {
+            familyTradition : "Sunday Dinners"
+        }
+        const wife = Object.create(husband);
+        wife.newSkill = "Cooking";
+
+        husband.familyTradition = "Sunday dinner with BBQ";
+        console.log(wife.familyTradition);
+        console.log(wife.newSkill);
+
+        const crushh = {
+            favoriteRestaurant : "Pasta Palace"
+        }
+        const friendd = Object.create(crushh);
+        console.log(friendd.favoriteRestaurant);
+        friendd.favoriteMovie = "Inception";
+        console.log(friendd.favoriteMovie)
+    </script>
+</body>
+
+</html>
