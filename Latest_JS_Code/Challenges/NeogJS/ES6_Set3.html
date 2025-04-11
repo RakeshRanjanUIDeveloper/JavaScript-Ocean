@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const items = ['apple', 'banana', 'orange']
+        const formatArray = (item) => {
+            return `The array has ${item.length} items, and the first item is "${item[0]}", and the last item is "${item[items.length - 1]}".`
+        }
+        const message = formatArray(items)
+        console.log(message)
+
+        const product = {
+            name: 'Socks',
+            price: 249,
+            inStock: true,
+        }
+        const formatProduct = (product) => {
+            const stockStatus = product.inStock ? 'in stock' : 'out of stock';
+            return `${product.name} costs INR ${product.price} and is ${stockStatus} `;
+        }
+        const messagee = formatProduct(product)
+        console.log(messagee)
+        // Socks costs INR 249 and is in stock.
+
+        const findPerson = (personList, newname) => {
+            return (
+                personList.find((person) => person.name === newname) ? newname : null
+            )
+        }
+        console.log(
+            findPerson(
+                [
+                    { name: 'Amay', age: 25 },
+                    { name: 'Akhil', age: 25 },
+                ],
+                'Akhil',
+            ),
+        )
+
+
+        const pickFirstAndSecond = ([first, second]) => {
+            return { first, second }
+        }
+        console.log(pickFirstAndSecond(['orange', 'banana', 'apple']))
+        // {first: 'orange', second: 'banana'}
+        console.log(pickFirstAndSecond(['red', 'blue', 'green']))
+        // {first: 'red', second: 'blue'}
+
+
+        // function startsWithA(str) {
+        // if (str.charAt(0) === 'A') {
+        // return true
+        // } else {
+        // return false
+        // }
+        // }
+
+        const startsWithA = (str) => {
+            return str.charAt(0) === 'A'
+        }
+        console.log(startsWithA('Akshita'))
+        // true
+        console.log(startsWithA('Jeena'))
+        // false
+
+        const printFirstCharacter = (arr) => {
+            return arr[0]
+        }
+        console.log(printFirstCharacter([1, 2, 3, 5, 8]))
+        // 1
+
+
+        const printLastFive = ([a, b, ...arr]) => {
+            return arr
+        }
+        console.log(printLastFive([0, 1, 1, 2, 3, 5, 8]))
+        // [1, 2, 3, 5, 8]
+
+
+        const printSecondCharacter = (str) => {
+            return str[1] * 20
+        }
+        console.log(printSecondCharacter([1, 2, 3, 5, 8]))
+        // 40
+
+
+        const sayHello = (str) => {
+            return `Hello ${str[1]}`
+        }
+        console.log(sayHello(['Akshay', 'Sweta', 'Prerana', 'Vinay']))
+        // Hello Sweta
+        console.log(sayHello(['Kanika', 'Rakesh', 'Prerana', 'Puja']))
+
+        const sumOfEvenIndices = (str) => {
+            let sum = 0
+            for (i = 0; i < str.length; i += 2) {
+                sum = sum + str[i]
+            }
+            return sum
+        }
+        console.log(sumOfEvenIndices([2, 4, 3, 7, 1, 5])) // 6
+        console.log(sumOfEvenIndices([12, 14, 3, 27, 15, 25])) // 30
+
+
+        const sumFirstTwoElements = ([first, second]) => first + second
+        console.log(sumFirstTwoElements([10, 4, 3, 7, 1, 5])) // 14
+        console.log(sumFirstTwoElements([12, 14, 3, 27, 15])) // 26
+
+        const printMultipleOfFive = (arr) => arr.find(num => num % 5 === 0)
+        console.log(printMultipleOfFive([7, 4, 10, 7, 5, 3])) // 10
+        console.log(printMultipleOfFive([7, 5, 10, 7, 15, 3])) // 5
+
+
+        const userData = {
+            name: 'Jane Doy',
+            postalCode: '12134',
+            city: 'Germany',
+        }
+        const getAddress = ({ postalCode, city }) => {
+            return { postalCode, city }
+        }
+        console.log(getAddress(userData))
+        // {postalCode: '12134', city: 'Germany'}
+
+
+
+
+        const userData1 = {
+            name: 'Gaurav',
+            postalCode: '12134',
+            country: 'Japan',
+        }
+        console.log(printData(userData1)) // Gaurav lives in Japan
+        const userData2 = {
+            name: 'Pritam',
+            postalCode: '560223',
+            country: 'India',
+        }
+        const printData = ({ name, country }) => `${name} lives in ${country}`;
+        console.log(printData(userData2)) // Pritam lives in India
+    </script>
+
+</body>
+
+</html>
