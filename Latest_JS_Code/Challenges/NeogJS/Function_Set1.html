@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const numbers = [1, 2, 3, 4, 5];
+        const incrementNumbers = (numbers) => {
+            return numbers.map((num) => num + 3)
+        }
+        console.log(incrementNumbers(numbers))
+        // Output: [4, 5, 6, 7, 8]
+
+
+        const myArray = ['apple', 'banana', 'cherry'];
+        const capitalizeArray = (myArray) => {
+            return myArray.map((fruit) => fruit.toUpperCase())
+        }
+        console.log(capitalizeArray(myArray))
+        // Output: ["APPLE", "BANANA", "CHERRY"]
+
+
+        const people = [
+            { name: 'Ankit', age: 25 },
+            { name: 'Vinit', age: 24 },
+            { name: 'Shashi', age: 29 },
+        ]
+        const getAges = (people) => {
+            return people.map((p) => p.age)
+        }
+        const ages = getAges(people);
+        console.log(ages) // Output: [25, 24, 29]
+
+
+        const products = [
+            { name: 'Lip Balm', stock: 100 },
+            { name: 'PERFUME', stock: 400 },
+            { name: 'Socks', stock: 200 },
+        ]
+        const getProductNamesInLowerCase = (products) => {
+            return products.map((p) => p.name.toLowerCase())
+        }
+        console.log(getProductNamesInLowerCase(products))
+
+
+        const cities = [
+            { name: 'New York', population: 8538000 },
+            { name: 'Los Angeles', population: 3976000 },
+            { name: 'Bangalore', population: 13608000 },
+        ]
+        const getCityNames = (cities) => {
+            return cities.map((c) => c.name)
+        }
+        console.log(getCityNames(cities))
+        // Output: ["New York", "Los Angeles", "Bangalore"]
+
+
+        const fruits = ['apple', 'banana', 'cherry', 'watermelon', 'pineapple'];
+        const filterLongStrings = (fruits) => {
+            return fruits.filter((f) => f.length > 5)
+        }
+        console.log(filterLongStrings(fruits))
+        // Output: ["banana", "cherry", "watermelon", "pineapple"]
+
+        const numberss = [1, 2, 30, 4, 15];
+        const isDivisibleBy3and5 = (numberss) => {
+            return numberss.filter((num) => num % 3 === 0 && num % 5 === 0)
+        }
+        console.log(isDivisibleBy3and5(numberss))
+        // Output: [30, 15]
+
+        const peoplee = [
+            { name: 'Rahul', age: 25 },
+            { name: 'Raj', age: 35 },
+            { name: 'Vijay', age: 45 },
+        ]
+        const filterByAge = (peoplee) => {
+            return peoplee.filter((p) => p.age > 30)
+        }
+        console.log(filterByAge(peoplee))
+        // Output: [{ name: 'Raj', age: 35 }, { name: 'Vijay', age: 45 }]
+
+        const students = [
+            { name: 'Aditya', score: 85 },
+            { name: 'Bob', score: 75 },
+            { name: 'Charlie', score: 90 },
+        ]
+        const filterByScore = (students) => {
+            return students.filter((s) => s.score > 80)
+        }
+        console.log(filterByScore(students))
+        // Output: [{ name: 'Aditya', score: 85 }, { name: 'Charlie', score: 90 }]
+
+
+        const peoplle = [
+            { name: 'Ridhima', age: 75, city: 'Indore' },
+            { name: 'Akshay', age: 60, city: 'Delhi' },
+            { name: 'Udit', age: 80, city: 'Indore' },
+            { name: 'Venki', age: 80, city: 'Bangalore' },
+        ]
+        const filterByCityAndAge = (peoplle) => {
+            return peoplle.filter((p) => p.city === 'Indore' && p.age > 70)
+        }
+        const filteredPeople = filterByCityAndAge(peoplle)
+        console.log(filteredPeople)
+
+
+        const books = [
+            {
+                title: "The Hitchhiker's Guide to the Galaxy",
+                author: 'Douglas Adams',
+                genre: 'Science Fiction',
+            },
+            {
+                title: 'To Kill a Mockingbird',
+                author: 'Harper Lee',
+                genre: 'Fiction',
+            },
+            { title: '1984', author: 'George Orwell', genre: 'Science Fiction' },
+            { title: 'Pride and Prejudice', author: 'Jane Austen', genre: 'Romance' },
+        ]
+        const filterByGenre = (books, genreName) => {
+            return books.filter((b) => b.genre === genreName)
+        }
+        const filteredBooks = filterByGenre(books, 'Science Fiction')
+        console.log(filteredBooks)
+
+        const employees = [
+            { name: 'Abhay', age: 25, salary: 20000 },
+            { name: 'Joice', age: 30, salary: 35000 },
+            { name: 'Reena', age: 35, salary: 15000 },
+            { name: 'Jeena', age: 40, salary: 50000 },
+        ]
+        const filterBySalary = (employees, givenSalary, givenAge) =>{
+            return employees.filter((e) => e.salary>givenSalary && e.age>givenAge)
+        }
+        const filteredEmployees = filterBySalary(employees, 22000, 25)
+        console.log(filteredEmployees)
+
+    </script>
+</body>
+
+</html>
