@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const people = [
+            { name: 'Raj', age: 28 },
+            { name: 'Swapnil', age: 42 },
+            { name: 'Anushka', age: 35 }
+        ];
+        const getNames = (people) => {
+            return people.map((p) => p.name)
+        }
+        const names = getNames(people);
+        console.log(names); // Output: ['Raj', 'Swapnil', 'Anushka']
+
+        const numbers = [1, 2, 3, 4];
+        const multiplyByFive = numbers.map((num) => num * 5)
+        console.log(multiplyByFive); // Output: [5, 10, 15, 20]
+
+        const employeeData = [
+            { name: "ram", dept: "marketer" },
+            { name: "Radha", dept: "SDE" },
+            { name: "shyam", dept: "finance professional" },
+        ]
+        const greetEmployeeMessages = employeeData.map((e) => `Hi, ${e.name} we are glad to have you as a ${e.dept}`)
+        console.log(greetEmployeeMessages);
+
+        const books = [
+            { title: 'The Great Gatsby', author: 'F. Scott Fitzgerald' },
+            { title: 'To Kill a Mockingbird', author: 'Harper Lee' },
+            { title: '1984', author: 'George Orwell' },
+            { title: 'Pride and Prejudice', author: 'Jane Austen' }
+        ]
+        const getBookTitles = (books) => {
+            return books.map((b) => b.title)
+        }
+        const titles = getBookTitles(books);
+        console.log(titles);
+
+        const studentName = ["Ram", "Anjali", "Arpit", "Bhanu Kumar", "Jaya", "Ankit", "shayam"]
+        const studentNames = studentName.filter((s) => s.charAt(0) === 'A')
+        console.log(studentNames);
+
+        const productData = [
+            { prodName: "Dairy Milk", price: 10 },
+            { prodName: "Dairy Milk Silk", price: 70 },
+            { prodName: "Five Star", price: 20 },
+            { prodName: "Mars", price: 50 }
+        ]
+        const getProducts = (productData, givenPrice) => {
+            return productData.filter((p) => p.price > givenPrice)
+        }
+        console.log(getProducts(productData, 40))
+
+
+        const numberss = [1, 2, 3, 21, 14, 7];
+        /*  const isDivisibleBy7 = numberss.filter((num) => num%7===0)[0] */
+        const isDivisibleBy7 = numberss.find((num) => num % 7 === 0)
+        console.log(isDivisibleBy7)
+
+        const namees = ["Mohan", "Anjali", "Geetanjali", "Ankit", "Bhanu Kumar", "Ramakrishnan"]
+        const isNamesGreaterThan8 = (namees) => {
+            return namees.find((n) => n.length > 8)
+        }
+        console.log(isNamesGreaterThan8(namees));
+
+
+        const students = [
+            { name: "John", grade: "B" },
+            { name: "Mary", grade: "A" },
+            { name: "Sam", grade: "C" },
+            { name: "Sarah", grade: "A" },
+        ];
+        const findStudentWithGradeA = (students) => {
+            return students.filter((s) => s.grade === 'A')
+        }
+        const studentWithGradeA = findStudentWithGradeA(students);
+        console.log(studentWithGradeA);
+
+        const studentts = [
+            { name: "John", grade: "B", scholarship: false },
+            { name: "Mary", grade: "B", scholarship: true },
+            { name: "Sam", grade: "A", scholarship: false },
+            { name: "Sarah", grade: "A", scholarship: true },
+        ];
+        const findStudent = (studentts) => {
+            return studentts.find((s) => s.grade === 'B')
+        }
+        const student = findStudent(studentts);
+        console.log(student);
+
+
+        const bollywoodMovies = [
+            { title: 'Sholay', director: 'Ramesh Sippy', year: 1975, rating: 8.2 },
+            { title: 'Amar Akbar Anthony', director: 'Manmohan Desai', year: 1977, rating: 7.6 },
+            { title: 'Namak Halaal', director: 'Prakash Mehra', year: 1982, rating: 7.4 },
+            { title: 'Mr. India', director: 'Shekhar Kapur', year: 1987, rating: 7.8 },
+            { title: 'Qayamat Se Qayamat Tak', director: 'Mansoor Khan', year: 1988, rating: 7.6 },
+            { title: 'Parinda', director: 'Vidhu Vinod Chopra', year: 1989, rating: 8.1 },
+            { title: 'Dil', director: 'Indra Kumar', year: 1990, rating: 7.8 }
+        ];
+        const getBestOldBollywoodMovies = (bollywoodMovies) => {
+            return bollywoodMovies.filter((m) => m.year <1990 && m.rating>8).map((m) => m.title)
+        }
+        const bestOldMovies = getBestOldBollywoodMovies(bollywoodMovies);
+        console.log(bestOldMovies);
+    </script>
+</body>
+
+</html>
