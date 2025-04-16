@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const cars = [
+            { make: 'Toyota', model: 'Corolla', year: 2010 },
+            { make: 'Honda', model: 'Civic', year: 2012 },
+            { make: 'Toyota', model: 'Camry', year: 2015 },
+            { make: 'Ford', model: 'Mustang', year: 2018 },
+        ]
+        const findToyotaCar = (cars) => cars.find((car) => car.make === 'Toyota' && car.year > 2010);
+        const toyotaCar = findToyotaCar(cars)
+        console.log(toyotaCar);
+
+        const carss = [
+            { make: 'Toyota', model: 'Corolla', year: 2010 },
+            { make: 'Honda', model: 'Civic', year: 2012 },
+            { make: 'Toyota', model: 'Camry', year: 2015 },
+            { make: 'Ford', model: 'Mustang', year: 2018 },
+        ]
+        const getCarDetails = (carss) => carss.filter((car) => car.year > 2012)
+        const getCars = getCarDetails(carss)
+        console.log(getCars)
+
+
+        const products = [
+            { name: 'Toothbrush', price: 29, category: 'health' },
+            { name: 'Coffee Maker', price: 99, category: 'home' },
+            { name: 'iPad', price: 799, category: 'electronics' },
+            { name: 'Smartwatch', price: 199, category: 'electronics' },
+        ]
+        const findElectronicsProduct = (products) => products.find((p) => p.category === 'electronics')
+        const electronicsProduct = findElectronicsProduct(products)
+        console.log(electronicsProduct)
+
+        const productss = [
+            { name: 'Toothbrush', price: 29, category: 'health' },
+            { name: 'Coffee Maker', price: 99, category: 'home' },
+            { name: 'iPad', price: 799, category: 'electronics' },
+            { name: 'Smartwatch', price: 199, category: 'electronics' },
+        ]
+        const getAllElectronicProducts = (productss) => productss.filter((p) => p.category === 'electronics')
+        const electronicProducts = getAllElectronicProducts(productss)
+        console.log(electronicProducts)
+
+
+        const students = [
+            { name: 'Alice', age: 16, grade: 90 },
+            { name: 'Bob', age: 17, grade: 80 },
+            { name: 'Charlie', age: 15, grade: 95 },
+            { name: 'David', age: 16, grade: 85 },
+        ]
+        const filterStudentsByGrade = (students, studentGrade) => students.filter((s) => s.grade > studentGrade)
+        const highGradeStudents = filterStudentsByGrade(students, 85)
+        console.log(highGradeStudents)
+
+        const books = [
+            {
+                title: 'The Lord of the Rings',
+                author: 'J.R.R. Tolkien',
+                pageCount: 1178,
+            },
+            { title: 'To Kill a Mockingbird', author: 'Harper Lee', pageCount: 281 },
+            {
+                title: "The Hitchhiker's Guide to the Galaxy",
+                author: 'Douglas Adams',
+                pageCount: 193,
+            },
+            {
+                title: 'The Name of the Wind',
+                author: 'Patrick Rothfuss',
+                pageCount: 6
+            }
+        ]
+        const findBookWithMoreThan500Pages = (books) => books.find((book) => book.pageCount > 500)
+        const bookWithMoreThan500Pages = findBookWithMoreThan500Pages(books)
+        console.log(bookWithMoreThan500Pages)
+
+
+        const customers = [
+            { name: 'John', age: 25, gender: 'Male' },
+            { name: 'Jane', age: 30, gender: 'Female' },
+            { name: 'Bob', age: 40, gender: 'Male' },
+            { name: 'Alice', age: 35, gender: 'Female' },
+        ]
+        const getMaleCustomers = (customers) => customers.filter((c) => c.gender === 'Male')
+        const maleCustomers = getMaleCustomers(customers)
+        console.log(maleCustomers)
+
+        const games = [
+            {
+                title: 'The Witcher 3: Wild Hunt',
+                developer: 'CD Projekt Red',
+                genre: 'RPG',
+            },
+            {
+                title: 'Grand Theft Auto V',
+                developer: 'Rockstar North',
+                genre: 'Action',
+            },
+            { title: 'Portal 2', developer: 'Valve Corporation', genre: 'Puzzle' },
+            {
+                title: 'The Legend of Zelda: Breath of the Wild',
+                developer: 'Nintendo',
+                genre: 'Adventure',
+            },
+        ]
+        const filterByGenre = (games, myGenre) => games.filter((g) => g.genre === myGenre)
+        const filteredGames = filterByGenre(games, 'RPG')
+        console.log(filteredGames)
+
+        const carrs = [
+            { make: 'Toyota', model: 'Corolla', year: 2010 },
+            { make: 'Honda', model: 'Civic', year: 2012 },
+            { make: 'Toyota', model: 'Camry', year: 2015 },
+            { make: 'Ford', model: 'Mustang', year: 2018 },
+        ]
+        const getCarModel = (carrs) => carrs.filter((car) => car.year > 2012).map((c) => c.model)
+        const carModels = getCarModel(carrs)
+        console.log(carModels)
+
+        const boooks = [
+            {
+                title: 'The Lord of the Rings',
+                author: 'J.R.R. Tolkien',
+                pageCount: 1178,
+            },
+            { title: 'To Kill a Mockingbird', author: 'Harper Lee', pageCount: 281 },
+            {
+                title: "The Hitchhiker's Guide to the Galaxy",
+                author: 'Douglas Adams',
+                pageCount: 193,
+            },
+            {
+                title: 'The Name of the Wind',
+                author: 'Patrick Rothfuss',
+                pageCount: 662,
+            },
+        ]
+        const getTitlesWithMoreThan700Pages = (boooks) => boooks.filter((book) => book.pageCount > 700).map((b) => b.title)
+        const booksWithMoreThan700Pages = getTitlesWithMoreThan700Pages(boooks)
+        console.log(booksWithMoreThan700Pages)
+
+
+        const numbers = [12, 23, 4, 2, 11, 21];
+        const sumOfEvenNumbers = (numbers) => numbers.reduce((acc, initialValue) => {
+            if (initialValue % 2 === 0) {
+                return acc + initialValue
+            }
+            return acc
+        }, 0)
+        console.log(sumOfEvenNumbers(numbers))
+
+
+        const sstudents = [
+            { name: 'John', score: 80 },
+            { name: 'Jane', score: 90 },
+            { name: 'Bob', score: 75 },
+            { name: 'Alice', score: 85 },
+        ]
+        const getAverageScore = (sstudents) => {
+            const total = sstudents.reduce((acc, currentValue) => acc + currentValue.score, 0);
+            return total / sstudents.length;
+        };
+        console.log(getAverageScore(sstudents))
+
+        const pproducts = [
+            { name: 'Shirt', price: 20, quantity: 2 },
+            { name: 'Pants', price: 30, quantity: 1 },
+            { name: 'Shoes', price: 50, quantity: 1 },
+            { name: 'Hat', price: 10, quantity: 3 },
+        ]
+        const getTotalCost = (pproducts) => pproducts.reduce((acc, current) => acc + (current.price * current.quantity), 0)
+        console.log(getTotalCost(pproducts))
+
+        const strings = ['Hello', ' ', 'world', '!']
+        const concatenateStrings = (strings) => strings.reduce((acc,curr) => acc+curr, [])
+        console.log(concatenateStrings(strings))
+
+        const numbbers = [10, 5, 8, 3, 6];
+        const getMinimumNumber = (numbbers) => numbbers.reduce((acc,curr) => (acc<curr ? acc : curr))
+        console.log(getMinimumNumber(numbbers))
+    </script>
+</body>
+
+</html>
