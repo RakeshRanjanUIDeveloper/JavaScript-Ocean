@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const strings = ['apple', 'banana', 'cherry', 'date', 'blueberry'];
+        const totalLength = (strings) => strings.reduce((acc, curr) => acc + curr.length, 0)
+        console.log(totalLength(strings))
+
+        const numbers = [1, 2, 3, 4, 5];
+        const sumSquares = (numbers) => numbers.reduce((acc, curr) => acc + curr * curr, 0)
+        console.log(sumSquares(numbers))
+
+        const items = [
+            { name: 'Item 1', price: 10 },
+            { name: 'Item 2', price: 20 },
+            { name: 'Item 3', price: 30 },
+        ]
+        const totalValue = (items) => items.reduce((acc, curr) => acc + curr.price, 0)
+        console.log(totalValue(items))
+
+        const concatStrings = (arr) => arr.reduce((acc, curr) => acc + curr, '')
+        console.log(concatStrings(['this', 'is', 'fun']))
+
+        const numberss = [1, 2, 3, 4, 5];
+        const product = (numberss) => numberss.reduce((acc, curr) => acc * curr, 1)
+        console.log(product(numberss))
+
+        const stringss = ['neogcamp', 'Haule Haule', 'code', 'Batman', 'Awesome'];
+        const longestString = (stringss) => stringss.reduce((acc, curr) => (acc.length < curr.length ? curr : acc))
+        console.log(longestString(stringss));
+
+
+        const people = [
+            { name: 'Jeena', age: 25 },
+            { name: 'Priya', age: 30 },
+            { name: 'Naina', age: 45 },
+        ]
+        const oldestPersonName = (people) => people.reduce((acc, curr) => (acc.age > curr.age ? acc : curr)).name
+        console.log(oldestPersonName(people))
+
+        const peoplee = [
+            { name: 'Alice', age: 25 },
+            { name: 'Bob', age: 30 },
+            { name: 'Charlie', age: 35 },
+            { name: 'David', age: 40 },
+        ]
+        const getAverageAge = (peoplee) => peoplee.reduce((acc, curr) => ((acc + curr.age)), 0) / peoplee.length
+        console.log(getAverageAge(peoplee));
+
+        const products = [
+            { name: 'Bread', price: 10, quantity: 2 },
+            { name: 'Clips', price: 20, quantity: 5 },
+            { name: 'Knife', price: 30, quantity: 1 },
+            { name: 'Slipper', price: 40, quantity: 3 },
+        ]
+        // Your code here
+        const findMostExpensiveProduct = (products) => products.reduce((acc, curr) => acc.price > curr.price ? acc : curr)
+        console.log(findMostExpensiveProduct(products))
+
+        const fruits = [
+            'apple',
+            'banana',
+            'banana',
+            'cherry',
+            'apple',
+            'apple',
+            'banana',
+        ]
+        const countStrings = (fruits) => fruits.reduce((acc, curr) => {
+            acc[curr] = (acc[curr] || 0) +1;
+            return acc
+        }, {})
+        console.log(countStrings(fruits))
+
+    </script>
+</body>
+
+</html>
